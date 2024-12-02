@@ -13,7 +13,7 @@ public class UnitTest1
         Assert.Equal(result, false);
     }
     
-    [Fact]
+    [Fact (DisplayName = "IsUpperCase_OneLowercaseLetter_ShouldReturn_True")]
     public void IsUpperCase_OneupperCase_ShouldBReturn_True()
     {
         string input = "A";
@@ -21,13 +21,14 @@ public class UnitTest1
         
         Assert.Equal(result, true);
     }
-    [Theory]
+    [Theory (DisplayName = "IsUpperCase_OneLowercaseLetter_ShouldReturn_False")]
     [InlineData("An", true)]
     [InlineData("nA", true)]
     [InlineData("nnnnnA", true)]
     [InlineData("test", false)]
     [InlineData("HELLO I AM DONALD", true)]
     [InlineData("hello i am donald", false)]
+    
     public void IsUpperCase_Multiple_ShouldBReturn_Expected(string input, bool expected)
     {
         bool result = Kata.IsUpperCase(input);

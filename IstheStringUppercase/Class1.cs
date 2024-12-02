@@ -6,7 +6,7 @@ public class Kata
     {
         foreach (var c in text)
         {
-            if(char.IsUpper(c))
+            if(char.IsLower(c))
                 return true;
         }
         return false;
